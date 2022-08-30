@@ -5,7 +5,6 @@ import helmet from 'helmet';
 import './config';
 import { Response } from '@utilities';
 import TransactionRoutes from './routes/TransactionRoutes';
-import TransactionController from './controllers/TransactionController';
 var cron = require('node-cron');
 
 const PORT = process.env.PORT || 2000;

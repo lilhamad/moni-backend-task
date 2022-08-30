@@ -4,6 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import './config';
 import { Response } from '@utilities';
+import TransactionRoutes from './routes/TransactionRoutes';
+import TransactionController from './controllers/TransactionController';
 var cron = require('node-cron');
 
 const PORT = process.env.PORT || 2000;
@@ -29,6 +31,9 @@ app.get('/', (req, res) => {
   return Response.success(
     res, 200, 'I am alive at this port', PORT )
   });
+  app.use('/api/v1/transactions', TransactionRoutes);
+  
+  
   app.listen(PORT, () => {
     console.log(`Server running, ${PORT}`);
   });

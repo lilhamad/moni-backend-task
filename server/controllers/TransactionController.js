@@ -1,4 +1,6 @@
 import TransactionService from "../services/TransactionService";
+import Util from "../utils/Utils";
+const util = new Util();
 
 class TransactionController {
   static async test() {
@@ -7,6 +9,23 @@ class TransactionController {
       console.log("Test" + error);
     }
   }  
+
+  static async fund(req, res) {
+    try {
+      const transaction = await TransactionService.fund(req.body);
+      if (transaction.status) {
+        util.setSuccess(200, "Transaction sent", transaction.data);
+      } else {
+        util.setError(400, "Transaction Filed");
+      }
+      return util.send(res);
+    } catch (error) {
+      console.log(JSON.stringify(error));
+      util.setError(400, error);
+      return util.send(res);
+    }
+  }
+  
   
 }
 

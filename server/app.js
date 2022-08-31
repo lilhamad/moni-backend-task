@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import './config';
 import TransactionRoutes from './routes/TransactionRoutes';
 var cron = require('node-cron');
-import Util from "../utils/Utils";
+import Util from "./utils/Utils";
 
 
 const PORT = process.env.PORT || 2000;

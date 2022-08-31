@@ -21,11 +21,13 @@ export default class Util {
   }
   
   send(res) {
+    
     const result = {
       status: this.type,
       message: this.message,
       data: this.data,
     };
+    console.log("🚀 ~ mmresult", result)
     
     if (this.type === true) {
       return res.status(this.statusCode).json(result);
@@ -34,28 +36,6 @@ export default class Util {
       status: this.type,
       message: this.message,
     });
-  }
-  
-  sendWithEncryption(req, res) {
-    try{
-      const result = {
-        status: this.type,
-        message: this.message,
-      };
-      if(this.type){
-        result.data = this.data;
-      }
-      result.responseTime = new Date();
-      const encryptedData = req.clientCypher.encrypt(JSON.stringify(result));
-      return res.status(this.statusCode).send(encryptedData);
-    }
-    catch(error){
-      console.log("sendWithEncryption catch error", JSON.stringify(error));
-      return res.status(500).json({
-        status: 'error',
-        message: "encryption error",
-      });
-    }
   }
   
 }

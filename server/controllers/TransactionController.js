@@ -26,6 +26,22 @@ class TransactionController {
     }
   }
   
+  static async transfer(req, res) {
+    try {
+      const transaction = await TransactionService.transfer(req.body);
+      if (transaction.status) {
+        util.setSuccess(200, "Transaction sent", transaction.data);
+      } else {
+        util.setError(400, transaction.message);
+      }
+      return util.send(res);
+    } catch (error) {
+      console.log(JSON.stringify(error));
+      util.setError(400, error);
+      return util.send(res);
+    }
+  }
+  
   
 }
 

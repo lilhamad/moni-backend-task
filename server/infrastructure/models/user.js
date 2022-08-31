@@ -19,6 +19,12 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         allowNull: true
       });
+      
+      User.hasOne(models.Credential, {
+        foreignKey: 'userId',
+        onDelete: 'CASCADE',
+        allowNull: true
+      });
     }    
   };
   User.init({

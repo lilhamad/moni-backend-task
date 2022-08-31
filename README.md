@@ -1,13 +1,17 @@
 # Moni wallet task
 
-A basic server with ES6+ features
 
-run
+run:
 npm run start:dev
 
-seed
+migrate:
 npm run migrate
 
-seed
+seed:
 npm run seed
 
+call fund api:
+pass {
+    "userId" : 1,
+    "amount" : 10
+}

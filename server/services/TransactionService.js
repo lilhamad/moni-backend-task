@@ -30,6 +30,7 @@ class TransactionService {
       let updateWallet = await update("Wallet", { id: userUpdate.user.Wallet.id }, newData);
       return { status:true, data: data };
     } catch (error) {
+      console.log("🚀 ~ error", error)
       return {status: false, message: "create: error" + JSON.stringify(error) + error.message};
     }
   }

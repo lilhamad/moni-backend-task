@@ -3,12 +3,6 @@ import Util from "../utils/Utils";
 const util = new Util();
 
 class TransactionController {
-  static async test() {
-    try {
-    } catch (error) {
-      console.log("Test" + error);
-    }
-  }  
 
   static async fund(req, res) {
     try {

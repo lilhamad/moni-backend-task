@@ -5,8 +5,6 @@ import helmet from 'helmet';
 import './config';
 import TransactionRoutes from './routes/TransactionRoutes';
 var cron = require('node-cron');
-import Util from "./utils/Utils";
-
 
 const PORT = process.env.PORT || 2000;
 const corsOptions = {
@@ -28,9 +26,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', (req, res) => {
-  util.setSuccess(200, 'I am alive at this port', PORT );
-  const util = new Util();
-  return util.send(res);
+  return res.json({status : "success"})
+  // util.setSuccess(200, 'I am alive at this port', PORT );
+  // return util.send(res);
   });
   app.use('/api/v1/transactions', TransactionRoutes);
   

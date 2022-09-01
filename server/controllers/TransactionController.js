@@ -8,7 +8,7 @@ class TransactionController {
     try {
       const transaction = await TransactionService.fund(req.body);
       if (transaction.status) {
-        util.setSuccess(200, "Transaction sent", transaction.data);
+        util.setSuccess(200, "Funded successfully!(it is assumed that the user pay through the url and a success callback is sent from paystack)", transaction.data);
       } else {
         util.setError(400, "Transaction Filed");
       }

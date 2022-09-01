@@ -22,6 +22,7 @@ class TransactionService {
         }
       });
       if(error) {
+        console.log("🚀 ~ error fund", error)
         return { status:false, message: "code:dw400 " + JSON.stringify(error?.data?.message)};
       }
       //asuming the user has passed card info and i have receive a callback data of the success status

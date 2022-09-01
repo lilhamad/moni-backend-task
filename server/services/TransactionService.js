@@ -48,7 +48,8 @@ class TransactionService {
       let updateRecipientWallet = await update("Wallet", { userId: recipient.id }, recipientData);
       return { status:true, data: "Transfer success" };
     } catch (error) {
-      return {status: false, message: "create: error" + JSON.stringify(error) + error.message};
+      console.log("🚀 ~ error", error)
+      return {status: false, message: "fund: error" + JSON.stringify(error) + error.message};
     }
   }
 
@@ -61,7 +62,7 @@ class TransactionService {
       });
       return { status:true, user: user };
     } catch (error) {
-      return {status: false, message: "create: error" + JSON.stringify(error) + error.message};
+      return {status: false, message: "fund: error" + JSON.stringify(error) + error.message};
     }
   }
   

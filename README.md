@@ -11,16 +11,17 @@ seed:
 npm run seed
 
 Fund endpoint:
-url:{baseUrl}/fund
+url:{baseUrl}/transactions/fund
 payload : 
 pass {
     "userId" : 1,
     "amount" : 10
 }
 
+baseUrl : https://moni-wall.herokuapp.com/api/v1
 
 Transfer endpoint:
-url:{baseUrl}/transfer
+url:{baseUrl}/transactions/transfer
 payload:
 {
     "senderId" : 1,

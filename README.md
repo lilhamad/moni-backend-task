@@ -9,6 +9,7 @@
 6. Start the app : npm run start:dev
 
 ## Call the 2 endpoint
+ BaseUrl : https://moni-wall.herokuapp.com/api/v1 or localhost:{your port}/api/v1
 1. Fund endpoint:
 url: {baseUrl}/transactions/fund
 payload : 
@@ -17,7 +18,7 @@ pass {
     "amount" : 10
 }
 
-BaseUrl : https://moni-wall.herokuapp.com/api/v1 or localhost:{your port}/api/v1
+
 
 2. Transfer endpoint:
 url: {baseUrl}/transactions/transfer
